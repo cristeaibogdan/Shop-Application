@@ -63,7 +63,7 @@ public class Account implements Wishlist {
             }
         }
 
-        // in functie de valoarea lui test se va printa unul din cazuri
+        // in functie de valoarea lui test se va printa unul din mesaje
         switch (Test) {
             case 0:
                 System.out.println("Se poate face retur la: "+retur);
