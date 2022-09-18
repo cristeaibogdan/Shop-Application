@@ -15,5 +15,4 @@ public class Usage {
         Account_One.retur("nothing");
         System.out.println(Account_One);
     }
-    //aceasta este o modificare
 }
