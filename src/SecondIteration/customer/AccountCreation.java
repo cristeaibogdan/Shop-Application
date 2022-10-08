@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.Scanner;
 public class AccountCreation {
     public static void main() {
+        Scanner input = new Scanner(System.in);
 
-        try (FileWriter fileWriter = new FileWriter("data.txt",true); // can add to existing files
-             Scanner input = new Scanner(System.in)) {
+        try (FileWriter fileWriter = new FileWriter("data.txt",true)) {; // can add to existing files
 
             System.out.println("->Account creation process<-");
 

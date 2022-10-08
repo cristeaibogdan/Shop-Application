@@ -5,20 +5,22 @@ import SecondIteration.customer.AccountReader;
 
 import java.util.Scanner;
 public class Usage {
-    public static void main(String[] args)  {
-
-        boolean value = false;
+    public static void main(String[] args) {
         Scanner selection = new Scanner(System.in);
+        boolean value = false;
+
+        //Big attention not to close scanners that have System.in, in them
+        //or the program will throu an exception!
 
         do {
 
-        System.out.println("Select an option: ");
-        System.out.println("1 - Create account");
-        System.out.println("2 - Login");
+            System.out.println("Select an option: ");
+            System.out.println("1 - Create account");
+            System.out.println("2 - Login");
 
-            switch (selection.next()) {
+            switch (selection.nextLine()) {
                 case "1":
-                    value = true;
+                    value = false;
                     AccountCreation.main();
                     break;
                 case "2":
@@ -33,7 +35,6 @@ public class Usage {
             }
 
         } while (value == false);
-        selection.close();
     }
 }
 

@@ -10,7 +10,7 @@ public class AccountOptions {
         System.out.println("1 - See user credentials");
         System.out.println("2 - Set up addresses");
         System.out.println("3 - Buy");
-        System.out.println("4 - my Orders");
+        System.out.println("4 - My Orders");
         System.out.println("5 - Wishlist");
         System.out.println("6 - Return a product");
         System.out.println("7 - Log out");
@@ -43,6 +43,16 @@ public class AccountOptions {
                     break;
 
                 case "6":
+                    value = true;
+
+                    break;
+
+                case "7":
+                    value = true;
+                    System.exit(1);
+                    break;
+
+                case "8":
                     value = true;
 
                     break;
