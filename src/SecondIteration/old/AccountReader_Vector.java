@@ -1,13 +1,16 @@
-package SecondIteration.customer;
+package SecondIteration.old;
 import SecondIteration.customer.Account;
 import java.io.*;
 import java.util.Scanner;
-public class AccountReader {
-    public static void main() {
+
+@Deprecated
+public class AccountReader_Vector {
+    public static void main(String[] args) {
 
         Account[] accounts = new Account[100]; //find something to make that 100 flexible!
-        int index = 0;
         boolean value = false;
+        int index = 0;
+        int counter = 3;
 
         do { // to repeat if login is not successful
 
@@ -28,7 +31,7 @@ public class AccountReader {
                     //System.out.println("Line read is: " + accountLine);
 
                     //2.Break line in words, split by " " (empty string)
-                    String[] accountComp = accountLine.split(" ");
+                    String[] accountComp = accountLine.split("\\|");
 
                     //2.1. Verify step 2 is working
 //                    for (int i = 0; i < accountComp.length; i++) {
@@ -39,7 +42,7 @@ public class AccountReader {
                     Account account = new Account(accountComp[0], accountComp[1]);
                     //System.out.println("Scanned account is: " + account);
 
-                    //4.Inserting created objects in Account[] vector
+                    //4.Insert created objects in Account[] vector
                     accounts[index] = account;
                     index++;
                 }
@@ -50,6 +53,13 @@ public class AccountReader {
 
             try {
                 for (Account test : accounts) {
+
+                    if (test == null) {
+                        System.out.println("Invalid user or pass. Try again!");
+                        value = false;
+                        break;
+                    }
+
                     if (test.getPass().equals(pass) && test.getUser().equals(user)) {
                         System.out.println("Log in success!");
                         value = true;
@@ -57,9 +67,8 @@ public class AccountReader {
                     }
                 }
             } catch (NullPointerException ne) {
-                System.out.println("Wrong user or pass!");
+                System.out.println("NullPointer exception!");
             }
-
         } while (value == false);
     }
 }

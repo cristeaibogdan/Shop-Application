@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 public class AccountCreation {
-    public static void main() {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
         try (FileWriter fileWriter = new FileWriter("data.txt",true)) {; // can add to existing files
@@ -12,15 +12,15 @@ public class AccountCreation {
             System.out.println("->Account creation process<-");
 
             System.out.println("Type user: ");
-            String user = input.next();
+            String user = input.nextLine();
 
             System.out.println("Type pass: ");
-            String pass = input.next();
+            String pass = input.nextLine();
 
             System.out.println("Account successfully created!");
-            System.out.println("Your user is: " + user + " and your pass is: " + pass);
+            System.out.println("Your user is: " + user.trim() + " and your pass is: " + pass.trim());
 
-            fileWriter.write(user+" "+pass+"\n");
+            fileWriter.write(user.trim()+"|"+pass.trim()+"\n");
 
         } catch (FileNotFoundException e) {
             System.out.println("Fisierul nu a fost gasit!");

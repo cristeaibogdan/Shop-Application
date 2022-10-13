@@ -1,7 +1,9 @@
 package SecondIteration.customer;
+import SecondIteration.Usage;
+
 import java.util.Scanner;
 public class AccountOptions {
-    public static void main()  {
+    public static void main(String[] args)  {
 
         boolean value;
         Scanner input = new Scanner(System.in);
@@ -49,14 +51,15 @@ public class AccountOptions {
 
                 case "7":
                     value = true;
-                    System.exit(1);
+                    Usage.main(null);
                     break;
 
                 case "8":
                     value = true;
-
+                    System.out.println("Account deleted!");
+                    //delete specified login from data.txt file
+                    Usage.main(null);
                     break;
-
                 default:
                     value = false;
                     System.out.println("Invalid input!");
@@ -64,7 +67,6 @@ public class AccountOptions {
             }
 
         } while (value != true);
-        input.close();
     }
 }
 
