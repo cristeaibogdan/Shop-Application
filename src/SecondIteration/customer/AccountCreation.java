@@ -7,7 +7,7 @@ public class AccountCreation {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        try (FileWriter fileWriter = new FileWriter("data.txt",true)) {// can add to existing files
+        try (FileWriter fileWriter = new FileWriter("Accountlist.txt",true)) {// can add to existing files
 
             System.out.println("->Account creation process<-");
 

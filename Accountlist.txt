@@ -1,3 +1,4 @@
 bogdan|Bogdan
 bla|bla
 admin|admin
+user|pass

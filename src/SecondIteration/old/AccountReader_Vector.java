@@ -23,7 +23,7 @@ public class AccountReader_Vector {
             System.out.println("Type pass: ");
             String pass = reader.nextLine();
 
-            try (Scanner scanner = new Scanner(new FileInputStream("data.txt"))) {
+            try (Scanner scanner = new Scanner(new FileInputStream("data_deprecated.txt"))) {
 
                 while (scanner.hasNext()) {
                     //1.Scan line
