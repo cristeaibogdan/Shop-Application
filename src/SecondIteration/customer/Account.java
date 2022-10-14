@@ -1,7 +1,5 @@
 package SecondIteration.customer;
-
 import java.util.Objects;
-
 public class Account {
 
     private String user;

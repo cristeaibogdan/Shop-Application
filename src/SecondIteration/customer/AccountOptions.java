@@ -23,7 +23,7 @@ public class AccountOptions {
             switch (input.nextLine()) {
                 case "1":
                     value = true;
-
+                    AccountCredentials.main(null);
                     break;
                 case "2":
                     value = true;
@@ -56,10 +56,11 @@ public class AccountOptions {
 
                 case "8":
                     value = true;
-                    System.out.println("Account deleted!");
-                    //delete specified login from data.txt file
+                    AccountDeleter.main(null);
+                    System.out.println("Account has been deleted!");
                     Usage.main(null);
                     break;
+
                 default:
                     value = false;
                     System.out.println("Invalid input!");

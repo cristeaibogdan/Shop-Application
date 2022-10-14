@@ -1,6 +1,11 @@
 package SecondIteration.customer;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class AccountReader {
@@ -22,14 +27,14 @@ public class AccountReader {
             System.out.println("Type pass: ");
             String pass = reader.nextLine();
 
-            try (Scanner scanner = new Scanner(new FileInputStream("data.txt"))) {
+            try (Scanner scanner = new Scanner(new FileInputStream("AccountList.txt"))) {
 
                 while (scanner.hasNext()) {
                     //1.Scan line
                     String accountLine = scanner.nextLine();
                     //System.out.println("Line read is: " + accountLine);
 
-                    //2.Break line in words, split by " " (empty string)
+                    //2.Break line in words, split by "|" (empty string)
                     String[] accountComp = accountLine.split("\\|");
 
                     //2.1. Verify step 2 is working
@@ -43,7 +48,6 @@ public class AccountReader {
 
                     //4.Insert created objects in Account[] vector
                     accList.add(account);
-                    //index++; nu mai este necesar
                 }
 
             } catch (FileNotFoundException fe) {
@@ -55,6 +59,16 @@ public class AccountReader {
                 Account objectOne = (Account) o;
 
                 if (objectOne.getUser().equals(user) && objectOne.getPass().equals(pass)) {
+
+                    //write in a separate text the credentials of the account that was used to log in
+                    Path path = Paths.get("CurrentAccount.txt");
+                    String currentaccount = objectOne.getUser()+"|"+objectOne.getPass();
+                    try {
+                        Files.write(path, currentaccount.getBytes());
+                    } catch (IOException io) {
+                        System.out.println("A aparut eroarea IO!");
+                    }
+
                     System.out.println("Log in success!");
                     value = true;
                     break;

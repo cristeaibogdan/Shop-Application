@@ -1,0 +1,4 @@
+user1|pass1
+bogdan|Bogdan
+bla|bla
+admin|admin
