@@ -12,7 +12,7 @@ public class AccountReader {
 
     public static void main(String[] args) {
 
-        ArrayList<Object> accList = new ArrayList<>();
+        ArrayList<Account> accList = new ArrayList<>();
         boolean value = false;
         int counter = 3;
 
@@ -54,9 +54,9 @@ public class AccountReader {
                 System.out.println("File not found!");
             }
 
-            for (Object o : accList) {
+            for (Account acc : accList) {
                 //System.out.println(accList.get(index));
-                Account objectOne = (Account) o;
+                Account objectOne = acc;
 
                 if (objectOne.getUser().equals(user) && objectOne.getPass().equals(pass)) {
 

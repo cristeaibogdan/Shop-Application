@@ -1,0 +1,5 @@
+1|1|false|null|null|null|0
+jkl|jkl|false|Romania|Bucharest|Tobosari|69
+unloader|unloader|false|null|null|null|0
+test1|test1|false|null|null|null|0
+test2|test2|false|Romania|Bucharest|Tobosari|69
